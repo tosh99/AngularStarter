@@ -1,0 +1,34 @@
+<div class="container vertical">
+    <h3>Table Demonstration</h3>
+    <div class="table">
+        <div class="table-row table-header">
+            <div class="table-column">#ID</div>
+            <div class="table-column">Name</div>
+            <div class="table-column">Score Label</div>
+            <div class="table-column">Date Modified</div>
+        </div>
+        <div class="table-data-container">
+            <div class="table-row table-data" *ngFor="let env of [1,2,3,4]; let i=index">
+                <div class="table-column">{{env}}</div>
+                <div class="table-column">Name {{env + 1}}</div>
+                <div class="table-column">Sccr - {{env + 2}}</div>
+                <div class="table-column">{{env + 3}}</div>
+            </div>
+        </div>
+    </div>
+
+
+    <h3>Buttons Demonstration</h3>
+    <div class="container bcontainer">
+        <button>
+            <i class="fas fa-search"></i>
+            <span>Preview</span>
+        </button>
+        <button>
+            <i class="fas fa-search"></i>
+            <span>Preview</span>
+        </button>
+    </div>
+
+
+</div>
