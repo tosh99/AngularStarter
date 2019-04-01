@@ -1,24 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-
-/* Containers */
-@pri-font: 'Nunito Sans';
-@sec-font: 'sans-serif';
-
-/* Containers */
-@accent: #0278ec;
-@darkaccent: #0267c9;
-@lightaccent: #edf3fc;
-
-/* Containers */
-@primaryfont: rgb(94, 90, 95);
-@secondaryfont: rgba(9, 20, 37, 0.59);
-@tertiaryfont: rgba(0, 0, 0, 0.13);
-@warning-color: rgb(185, 43, 52);
-
-/* Containers */
-@border: rgba(0, 0, 0, 0.04);
-@inputborder: rgb(193, 200, 207);
-
+@import "app/shared/stylesheets/variables";
+@import "app/shared/stylesheets/buttons";
+@import "app/shared/stylesheets/scroll";
 
 /* Global */
 html, body {
@@ -27,80 +10,5 @@ html, body {
     font-family: @pri-font, @sec-font;
 
 }
-
-/* Containers */
-.container {
-    display: flex;
-}
-
-.horizontal {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.vertical {
-    display: flex;
-    flex-direction: column;
-}
-
-
-
-/* Scroll Bars */
-/* width */
-::-webkit-scrollbar {
-    width: 6px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 4px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-
-/* Containers */
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 45px;
-    min-width: 120px;
-    background-color: @accent;
-    padding: 10px 20px;
-    color: white;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    font-family: @pri-font, @sec-font;
-    max-height: 38px;
-    transition: 0.5s;
-    font-size: 0.8em;
-    box-shadow: 1px 1px 3px 0 rgba(20, 59, 101, 0.38);
-
-    i {
-        margin: 0 5px;
-    }
-
-    span {
-        margin: 0 5px;
-    }
-}
-
-button:hover {
-    background-color: @darkaccent;
-    transition: 0.5s;
-}
-
 
 

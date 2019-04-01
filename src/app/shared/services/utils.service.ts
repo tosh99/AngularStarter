@@ -3,24 +3,37 @@ import {Injectable} from '@angular/core';
 import {environment, urlconstants} from './constants';
 
 
+/*
+*  This is the file which contains exposable global common functions
+*  ready to be used inside the project.
+*/
+
+
 @Injectable()
 export class UtilsService {
 
     constructor(public http: HttpClient) {
     }
 
-
-    /* Http Related Services */
-    getRequest(url) {
+    // Internal Functions --------------------------------------------------------------------- //
+    private getRequest(url) {
         return this.http.get(url);
     }
 
-    postRequest(url, params) {
+    private postRequest(url, params) {
         return this.http.post(url, params);
     }
 
-    /* Server Url Definitions */
-    parseEnv(urlkey, method = 'GET', payload = {}) {
+    // Exposed Functions --------------------------------------------------------------------- //
+    public setLocalStorageData(key, value) {
+        localStorage.setItem(key, value)
+    }
+
+    public getLocalStorageData(key) {
+        return localStorage.getItem(key);
+    }
+
+    public parseEnv(urlkey, method = 'GET', payload = {}) {
         let baseurl = '';
         if (environment['mode'] === 'Local') {
             baseurl = 'http://localhost:39/';
