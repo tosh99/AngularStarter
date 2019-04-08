@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {environment, urlconstants} from './constants';
+import {environment, jsonurlconstants, urlconstants} from '../../../environments/constants';
 
 
 /*
@@ -34,12 +34,27 @@ export class UtilsService {
     }
 
     public parseEnv(urlkey, method = 'GET', payload = {}) {
-        let baseurl = '';
-        if (environment['mode'] === 'Local') {
-            baseurl = 'http://localhost:39/';
+        let url = '';
+        let baseurl = 'assets/';
+
+        if (environment['mode'] === 'Client') {
+            method = 'GET';
+            baseurl = 'assets/';
+            url = baseurl + jsonurlconstants[urlkey];
+        } else {
+            if (environment['mode'] === 'Dev') {
+                baseurl = 'http://dev.api.com';
+            } else if (environment['mode'] === 'Stage') {
+                baseurl = 'http://stage.api.com';
+            } else if (environment['mode'] === 'Prod') {
+                baseurl = 'http://prod.api.com';
+            } else {
+                baseurl = 'assets/';
+            }
+
+            url = baseurl + urlconstants[urlkey];
         }
 
-        const url = baseurl + urlconstants[urlkey];
         if (method === 'GET') {
             return this.getRequest(url);
         } else {

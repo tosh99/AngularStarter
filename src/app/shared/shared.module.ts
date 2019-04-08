@@ -4,6 +4,7 @@ import {UtilsService} from "./services/utils.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ContenteditableModelDirective} from "./directives/contenteditable";
 import {FlexBoxModelDirective} from "./directives/flexbox";
+import {GlobalStateVariables} from "./services/globalstate.service";
 
 @NgModule({
     declarations: [
@@ -18,7 +19,7 @@ import {FlexBoxModelDirective} from "./directives/flexbox";
         ContenteditableModelDirective,
         FlexBoxModelDirective
     ],
-    providers: [UtilsService]
+    providers: [UtilsService, GlobalStateVariables]
 })
 export class SharedModule {
 }

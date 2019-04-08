@@ -1,21 +1,28 @@
-import {Directive, ElementRef, Input} from '@angular/core';
+import {Directive, ElementRef, Input, OnInit} from '@angular/core';
 
 
 @Directive({
     selector: '[appFlex]',
 })
-export class FlexBoxModelDirective {
+export class FlexBoxModelDirective implements OnInit{
+    @Input() padding: string = '0';
     @Input() flexDirection: string = 'row';
-    @Input() justify: string = 'center';
-    @Input() align: string = 'center';
+    @Input() justify: string = 'flex-start';
+    @Input() align: string = 'flex-start';
 
     constructor(private elRef: ElementRef) {
-        elRef.nativeElement.style.display = 'flex';
+
+    }
+
+    ngOnInit(): void {
+
+         this.elRef.nativeElement.style.display = 'flex';
 
         // Set Properties
-        elRef.nativeElement.style.flexDirection = this.flexDirection;
-        elRef.nativeElement.style.justifyContent = this.justify;
-        elRef.nativeElement.style.alignItems = this.align;
+        this.elRef.nativeElement.style.padding = this.padding;
+        this.elRef.nativeElement.style.flexDirection = this.flexDirection;
+        this.elRef.nativeElement.style.justifyContent = this.justify;
+        this.elRef.nativeElement.style.alignItems = this.align;
     }
 
 
