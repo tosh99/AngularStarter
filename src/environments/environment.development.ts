@@ -2,7 +2,7 @@
 
 export const environment = {
     production: true,
-    serverurl: '',
+    serverurl:'',
     apilist: {
         api: '/api/v1/'
     }

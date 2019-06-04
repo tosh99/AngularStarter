@@ -5,13 +5,13 @@ button {
     justify-content: center;
     min-height: 45px;
     min-width: 120px;
-    background-color: @accent;
+    background-color: $accent;
     padding: 10px 20px;
     color: white;
     cursor: pointer;
     border: none;
     border-radius: 5px;
-    font-family: @pri-font, @sec-font;
+    font-family: $pri-font, $sec-font;
     max-height: 38px;
     transition: 0.5s;
     font-size: 0.8em;
@@ -27,6 +27,6 @@ button {
 }
 
 button:hover {
-    background-color: @darkaccent;
+    background-color: $darkaccent;
     transition: 0.5s;
 }

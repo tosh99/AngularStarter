@@ -5,11 +5,13 @@ import {HttpClientModule} from "@angular/common/http";
 import {ContenteditableModelDirective} from "./directives/contenteditable";
 import {FlexBoxModelDirective} from "./directives/flexbox";
 import {GlobalStateVariables} from "./services/globalstate.service";
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
     declarations: [
         ContenteditableModelDirective,
-        FlexBoxModelDirective
+        FlexBoxModelDirective,
+        HeaderComponent
     ],
     imports: [
         CommonModule,
