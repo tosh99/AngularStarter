@@ -1,0 +1,11 @@
+/* Inputs */
+label.input {
+    input {
+        border: 1px solid $inputborder;
+        border-radius: 5px;
+        min-height: 36px;
+        padding: 5px 10px;
+        cursor: text;
+        width: calc(100% - 20px);
+    }
+}

@@ -25,6 +25,11 @@ export class UtilsService {
     }
 
     public parseEnv(urlkey, method = 'GET', payload = {}) {
+
+        if (environment.serverurl == 'assets/json') {
+            method = 'GET'
+        }
+
         const url = environment.serverurl + environment.apilist[urlkey];
         if (method === 'GET') {
             return this.getRequest(url);
