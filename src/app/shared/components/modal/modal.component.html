@@ -1,0 +1,18 @@
+<div class="modal">
+    <div class="modal-body">
+        <div class="modal-header">
+            <header>{{headertext}}</header>
+            <i class="fas fa-times" (click)="closeModal()"></i>
+        </div>
+        <div class="modal-content">
+            <header>{{content}}</header>
+        </div>
+        <div class="modal-footer" *ngIf="type === 'error'">
+            <button>Close</button>
+        </div>
+        <div class="modal-footer" *ngIf="type === 'confirmation'">
+            <button (click)="affirm()">{{affirmtext}}</button>
+            <button (click)="closeModal()">{{canceltext}}</button>
+        </div>
+    </div>
+</div>

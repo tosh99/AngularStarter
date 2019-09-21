@@ -1,0 +1,14 @@
+<!--This is the main container. It must be included in every page since it has important stylings associated with it-->
+<div class="pagecontainer">
+
+    <app-header></app-header>
+
+
+
+
+
+    <button (click)="showModal()">Show Modal</button>
+    <app-modal *ngIf="is_modal_displayed" [headertext]="'Modal'" [content]="'content'" (close)="closeModal($event)"></app-modal>
+
+
+</div>

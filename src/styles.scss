@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
 @import "app/shared/stylesheets/variables.scss";
-@import "app/shared/stylesheets/fonts.scss";
+@import "app/shared/stylesheets/modal.scss";
+
+
 @import "app/shared/stylesheets/buttons.scss";
 @import "app/shared/stylesheets/scroll.scss";
 @import "app/shared/stylesheets/input.scss";
+@import "app/shared/stylesheets/fonts.scss";
+
 
 /* Global */
 html, body {

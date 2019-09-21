@@ -1,11 +1,50 @@
 /* Inputs */
-label.input {
-    input {
+.ig {
+    display: flex;
+
+    .ig-item {
         border: 1px solid $inputborder;
         border-radius: 5px;
         min-height: 36px;
         padding: 5px 10px;
         cursor: text;
-        width: calc(100% - 20px);
+    }
+}
+
+.ig-v {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .ig-item {
+        header {
+            margin-bottom: 3px;
+        }
+    }
+}
+
+.ig-h {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .ig-item {
+        header {
+            margin-right: 5px;
+        }
+    }
+}
+
+.ig-2 {
+    .ig-item {
+        width: 50%;
+    }
+
+}
+
+.ig-3 {
+    .ig-item {
+        width: 33%;
     }
 }

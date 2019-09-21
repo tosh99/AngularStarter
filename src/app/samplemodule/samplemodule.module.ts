@@ -1,15 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {RootComponent} from './root/root.component';
+import {SampleComponent} from './sample/sample.component';
 import {SharedModule} from "../shared/shared.module";
 import {FormsModule} from "@angular/forms";
+import {SampleModuleRoutingModule} from "./sample-module-routing.module";
 
 @NgModule({
-    declarations: [RootComponent],
+    declarations: [SampleComponent],
     imports: [
         CommonModule,
         SharedModule,
-        FormsModule
+        FormsModule,
+        SampleModuleRoutingModule
     ]
 })
 export class SamplemoduleModule {

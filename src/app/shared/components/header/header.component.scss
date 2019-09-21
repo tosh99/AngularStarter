@@ -1,0 +1,37 @@
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 65px;
+    border-top: 4px solid maroon;
+    border-bottom: 1px solid #CCC;
+    padding: 0 25px;
+
+    .app-header-left {
+        display: flex;
+        align-items: center;
+
+        .brand-logo {
+            height: 30px;
+
+            img {
+                height: 100%;
+            }
+        }
+
+        .separator {
+            margin: 0 15px;
+            width: 1px;
+            background: rgb(230, 230, 230);
+            height: 35px;
+        }
+
+    }
+
+    .app-header-right {
+        display: flex;
+        align-items: center;
+
+    }
+
+}
