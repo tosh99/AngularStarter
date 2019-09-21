@@ -5,6 +5,11 @@ import {RouterModule, Routes} from '@angular/router';
 const routes: Routes = [
     {
         path: '',
+        redirectTo: 'sample',
+        pathMatch: 'full'
+    },
+    {
+        path: 'sample',
         loadChildren: () => import('./samplemodule/samplemodule.module').then(m => m.SamplemoduleModule)
     }
 ];

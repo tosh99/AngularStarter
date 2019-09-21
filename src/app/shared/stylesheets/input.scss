@@ -3,11 +3,30 @@
     display: flex;
 
     .ig-item {
-        border: 1px solid $inputborder;
-        border-radius: 5px;
         min-height: 36px;
-        padding: 5px 10px;
+        padding: 5px 0;
         cursor: text;
+        margin-bottom: 15px;
+
+        .ig-item-header {
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        input, .ig-item-input {
+            border: none;
+            border-bottom: 1px solid #CCC;
+            padding: 10px 0;
+            width: 90%;
+        }
+
+        .ig-item-dropdown {
+            width: 90%;
+        }
+
+        input:focus {
+            outline: none;
+        }
     }
 }
 

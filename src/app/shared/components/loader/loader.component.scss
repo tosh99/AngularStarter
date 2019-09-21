@@ -1,0 +1,13 @@
+/* Modal */
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+
+    img {
+        width: 33%;
+        max-width: 120px;
+    }
+}
+

@@ -6,11 +6,14 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
     styleUrls: ['./modal.component.scss']
 })
 export class ModalComponent implements OnInit {
-    @Input() headertext = '';
-    @Input() content = '';
-    @Input() type = 'confirmation';
-    @Input() affirmtext = 'Proceed';
-    @Input() canceltext = 'Cancel';
+    @Input() is_modal_displayed = {
+        type: 'confirmation',
+        headertext: 'Modal Header',
+        content: 'Modal Body',
+        affirmtext: 'Proceed',
+        canceltext: 'Cancel',
+    };
+
 
     @Output() close = new EventEmitter();
 

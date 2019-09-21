@@ -3,14 +3,16 @@
         <div class="brand-logo">
             <img src="https://cdn.worldvectorlogo.com/logos/devto.svg">
         </div>
-        <div class="separator"></div>
+        <div class="app-header-separator"></div>
         <div class="brand-name">Developer</div>
-
     </div>
     <div class="app-header-right">
-
-
+        <div class="user">
+            <header>Hi, {{user.name || 'John'}}</header>
+        </div>
+        <div class="app-header-separator"></div>
+        <div class="logout">
+            <i class="fas fa-sign-out-alt"></i>
+        </div>
     </div>
-
-
 </div>

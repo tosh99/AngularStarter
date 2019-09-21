@@ -4,6 +4,7 @@ import {SampleComponent} from './sample/sample.component';
 import {SharedModule} from "../shared/shared.module";
 import {FormsModule} from "@angular/forms";
 import {SampleModuleRoutingModule} from "./sample-module-routing.module";
+import {NgSelectModule} from "@ng-select/ng-select";
 
 @NgModule({
     declarations: [SampleComponent],
@@ -11,7 +12,8 @@ import {SampleModuleRoutingModule} from "./sample-module-routing.module";
         CommonModule,
         SharedModule,
         FormsModule,
-        SampleModuleRoutingModule
+        SampleModuleRoutingModule,
+        NgSelectModule
     ]
 })
 export class SamplemoduleModule {

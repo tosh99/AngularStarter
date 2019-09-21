@@ -19,12 +19,6 @@
             }
         }
 
-        .separator {
-            margin: 0 15px;
-            width: 1px;
-            background: rgb(230, 230, 230);
-            height: 35px;
-        }
 
     }
 
@@ -32,6 +26,13 @@
         display: flex;
         align-items: center;
 
+    }
+
+    .app-header-separator {
+        margin: 0 15px;
+        width: 1px;
+        background: rgb(230, 230, 230);
+        height: 35px;
     }
 
 }

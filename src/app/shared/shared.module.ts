@@ -7,13 +7,18 @@ import {FlexBoxModelDirective} from './directives/flexbox';
 import {GlobalStateVariables} from './services/globalstate.service';
 import {HeaderComponent} from './components/header/header.component';
 import {ModalComponent} from './components/modal/modal.component';
+import {LoaderComponent} from './components/loader/loader.component';
+import {ComponentInterface, ComponentInterfaceService} from "./interfaces/component.interface";
+import { MessageComponent } from './components/message/message.component';
 
 @NgModule({
     declarations: [
         ContenteditableModelDirective,
         FlexBoxModelDirective,
         HeaderComponent,
-        ModalComponent
+        ModalComponent,
+        LoaderComponent,
+        MessageComponent
     ],
     imports: [
         CommonModule,
@@ -23,9 +28,12 @@ import {ModalComponent} from './components/modal/modal.component';
         ContenteditableModelDirective,
         FlexBoxModelDirective,
         ModalComponent,
-        HeaderComponent
+        HeaderComponent,
+        LoaderComponent,
+        MessageComponent
+
     ],
-    providers: [UtilsService, GlobalStateVariables]
+    providers: [UtilsService, GlobalStateVariables, ComponentInterfaceService]
 })
 export class SharedModule {
 }

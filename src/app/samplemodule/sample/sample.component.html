@@ -1,14 +1,51 @@
+<!--App Header-->
+<app-header></app-header>
+
+<!--App Modal-->
+<app-modal *ngIf="modal_params.isdisplayed" [is_modal_displayed]="modal_params" (close)="toggleModal($event)"></app-modal>
+
 <!--This is the main container. It must be included in every page since it has important stylings associated with it-->
 <div class="pagecontainer">
+    <!--App Loader-->
+    <app-loader *ngIf="loader_params.isdisplayed" (close)="toggleLoader($event)"></app-loader>
 
-    <app-header></app-header>
+    <!--App Message-->
+    <app-message *ngIf="message_params.isdisplayed" [is_message_displayed]="message_params"></app-message>
+
+    <div class="pagesection">
+        <header>Buttons</header>
 
 
+        <div class="button-container">
+            <button (click)="toggleModal()">Show Modal</button>
+            <button (click)="toggleLoader()">Toggle Loader</button>
+            <button (click)="toggleMessage()">Toggle Message</button>
+        </div>
+    </div>
+
+    <div class="pagesection">
+        <header>Input Group</header>
+
+        <div class="ig ig-h ig-3">
+            <div class="ig-item">
+                <header class="ig-item-header">Simple Input</header>
+                <input class="ig-item-input" placeholder="dasda">
+            </div>
+            <div class="ig-item">
+                <header class="ig-item-header">Simple Dropdown</header>
+                <ng-select class="ig-item-dropdown" placeholder="dasda"></ng-select>
+            </div>
+            <div class="ig-item">
+                <header class="ig-item-header">Header</header>
+                <input class="ig-item-input" placeholder="dasda">
+            </div>
+        </div>
+    </div>
+
+    <div class="pagesection">
+        <header>Table</header>
 
 
-
-    <button (click)="showModal()">Show Modal</button>
-    <app-modal *ngIf="is_modal_displayed" [headertext]="'Modal'" [content]="'content'" (close)="closeModal($event)"></app-modal>
-
+    </div>
 
 </div>
