@@ -54,7 +54,7 @@ export class SampleComponent implements ComponentInterfaceService {
         })
     }
 
-    /*  ----------------------------------------------   Base Implementations  ------------------------------------ */
+    /*  --------------------------------   Base Implementations  ---------------------- */
 
     // Function for retreiving dropdown Values
     loadMetaData() {
