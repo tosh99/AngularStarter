@@ -18,30 +18,45 @@ in their respective descriptions.
     file and the styles in the header styling file.
 
 #### [Modal]() 
-    Most of the functionality for the header is located in the header component 
-    file and the styles in the header styling file.
+    A simple modal
+
 
 Params: modal_params
-```javascript
-const modal_params = {"context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false};
+```typescript
+const modal_params = {
+    context       : 'mycontext', 
+    type          : 'confirmation', 
+    headertext    : 'Modal Header', 
+    content       : 'Modal Body', 
+    affirmtext    : 'Proceed', 
+    canceltext    : 'Cancel',  
+    isdisplayed   : false
+};
 ```
 
 #### [Loader]() 
-    Most of the functionality for the header is located in the header component 
-    file and the styles in the header styling file.
+    A simple container containing loading circle
 
-Params: modal_params
-```json
-{"context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
+
+Params: loader_params
+```typescript
+const loader_params = {
+    isdisplayed: false
+};
 ```
 
-#### [Message]() 
-    Most of the functionality for the header is located in the header component 
-    file and the styles in the header styling file.
 
-Params: modal_params
-```json
-{"context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
+
+#### [Message]() 
+    A simple container containing messages of type 'message' and 'error'
+
+Params: message_params
+```typescript
+const message_params = {
+    type: 'message',
+    message: 'Sample Message',
+    isdisplayed: false
+};
 ```
 
 
