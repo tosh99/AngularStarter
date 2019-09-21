@@ -22,8 +22,8 @@ in their respective descriptions.
     file and the styles in the header styling file.
 
 Params: modal_params
-```json
-{ "context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
+```javascript
+const modal_params = {"context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false};
 ```
 
 #### [Loader]() 
@@ -32,7 +32,7 @@ Params: modal_params
 
 Params: modal_params
 ```json
-{ "context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
+{"context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
 ```
 
 #### [Message]() 
@@ -41,7 +41,7 @@ Params: modal_params
 
 Params: modal_params
 ```json
-{ "context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
+{"context": "mycontext", "type": "confirmation", "headertext": "Modal Header", "content": "Modal Body", "affirmtext": "Proceed", "canceltext": "Cancel",  "isdisplayed": false}
 ```
 
 
