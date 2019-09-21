@@ -1,27 +1,68 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject} from 'rxjs';
 
 
 @Injectable()
 export class GlobalStateVariables {
 
-    public _globalState = new BehaviorSubject(null);
+    public static _globalState = new BehaviorSubject(null);
 
     constructor() {
-        this.fetchGlobalState();
-    }
+        let gbstate = localStorage.getItem('globalState');
+        if (gbstate === null || gbstate === undefined) {
+            gbstate = JSON.parse('{}');
+        } else {
+            if (typeof (gbstate) === 'string') {
+                gbstate = JSON.parse(gbstate);
+            }
+        }
 
+        GlobalStateVariables._globalState.next(gbstate);
+    }
 
     // Exposed Functions --------------------------------------------------------------------- //
-    public setGlobalState(value) {
-        this._globalState.next(value);
-        localStorage.setItem('globalState', JSON.stringify(value));
+    public setGlobalState(key, value) {
+
+        let temp = GlobalStateVariables._globalState.getValue();
+        if (temp === null || temp === undefined) {
+            temp = {};
+        } else {
+            if (typeof (temp) === 'string') {
+                temp = JSON.parse(temp);
+            }
+        }
+        try {
+            temp[key] = value;
+        } catch (e) {
+            temp = {};
+            temp[key] = value;
+
+        }
+
+        temp[key] = value;
+        GlobalStateVariables._globalState.next(temp);
+        localStorage.setItem('globalState', JSON.stringify(temp));
     }
 
+    public removeGlobalState(key) {
+        let temp = GlobalStateVariables._globalState.getValue();
+        if (temp === null || temp === undefined) {
+            temp = {};
+        } else {
+            if (typeof (temp) === 'string') {
+                temp = JSON.parse(temp);
+            }
+        }
+        delete temp[key];
 
-    public fetchGlobalState() {
-        this._globalState.next(localStorage.getItem('globalState'));
+        GlobalStateVariables._globalState.next(temp);
+        localStorage.setItem('globalState', JSON.stringify(temp));
+
+
     }
 
+    public clearGlobalState() {
+        localStorage.clear();
+    }
 
 }
