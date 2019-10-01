@@ -1,6 +1,30 @@
+//Input Border Color
+$input-border: #000;
+
+//Input Group Params
+$ig-item-font-color: #53565A;
+$ig-item-placeholder-color: #98A4AE;
+$ig-item-input-border: #CFDDE6;
+$ig-input-required: #ED8B00;
+
+
+input {
+    padding: 3px 7px;
+    border: 1px solid $input-border;
+}
+
+input:focus {
+    outline: none;
+}
+
+
 /* Inputs */
 .ig {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
 
     .ig-item {
         min-height: 36px;
@@ -8,62 +32,131 @@
         cursor: text;
         margin-bottom: 15px;
 
-        .ig-item-header {
+        header, .ig-item-header {
             font-weight: 700;
             font-size: 13px;
+            margin-bottom: 5px;
+            color: $ig-item-font-color;
         }
 
-        input, .ig-item-input {
-            border: none;
-            border-bottom: 1px solid #CCC;
-            padding: 10px 0;
-            width: 90%;
+        .ig-input {
+            border-left: 4px solid white;
+
+            header {
+                font-size: 14px;
+                font-weight: 400;
+                color: $ig-item-font-color;
+                margin-left: -4px;
+            }
+
+            i {
+                border-top: 1px solid $ig-item-input-border;
+                border-bottom: 1px solid $ig-item-input-border;
+                height: 37px;
+                display: flex;
+                align-items: center;
+                padding-left: 10px;
+                padding-right: 5px;
+            }
+
+            input {
+                border: 1px solid $ig-item-input-border;
+                outline: none;
+                font-size: 14px;
+                padding: 9px 15px;
+                width: calc(100% - 32px)
+            }
+
+            input::placeholder {
+                color: $ig-item-placeholder-color;
+                font-size: 14px
+            }
+
+            textarea {
+                font-size: 14px;
+                width: calc(100% - 22px);
+                height: 100px;
+                border: 1px solid $ig-item-input-border;
+                padding: 10px;
+            }
+
+            ng-select {
+                width: 100%
+            }
+
+            .ng-select.ig-item-dropdown {
+                .ng-select-container {
+                    border: 1px solid $ig-item-input-border;
+                    font-weight: 400;
+                    border-radius: 0;
+
+                    .ng-value-container {
+                        .ng-placeholder {
+                            font-size: 14px;
+                            color: $ig-item-placeholder-color
+                        }
+
+                        .ng-value {
+                            font-size: 14px;
+
+                            input {
+                                border: none
+                            }
+
+                            .ng-value-label {
+                                padding: 2px 0;
+                                line-height: 26px !important
+                            }
+                        }
+
+                        .ng-input {
+                            input {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
-        .ig-item-dropdown {
-            width: 90%;
+        .ig-input-required {
+            border-left: 4px solid $ig-input-required;
+
+            input, textarea {
+                border-left: 1px solid transparent;
+            }
+
+            .ng-select.custom {
+                .ng-select-container {
+                    border-left: 1px solid transparent;
+                }
+            }
         }
 
-        input:focus {
-            outline: none;
+        .ig-input-large {
+            height: 122px;
         }
+
+
     }
+
+
 }
 
-.ig-v {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    .ig-item {
-        header {
-            margin-bottom: 3px;
-        }
-    }
-}
-
-.ig-h {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-
-    .ig-item {
-        header {
-            margin-right: 5px;
-        }
-    }
-}
 
 .ig-2 {
     .ig-item {
-        width: 50%;
+        width: calc(50% - 15px);
+        margin-right: 15px;
     }
 
 }
 
 .ig-3 {
     .ig-item {
-        width: 33%;
+        width: calc(33% - 15px);
+        margin-right: 15px;
     }
 }
+
+

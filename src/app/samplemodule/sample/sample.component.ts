@@ -47,9 +47,6 @@ export class SampleComponent implements ComponentInterfaceService {
                 this.app_params.isinitialised = true;
 
 
-                this.loadMetaData();
-                this.loadData();
-
             }
         })
     }

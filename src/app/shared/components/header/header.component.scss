@@ -1,9 +1,16 @@
+@import "~src/styles";
+
+//Variables
+$header-min-height: 65px;
+$header-topborder-height: 4px;
+
+
 .app-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 65px;
-    border-top: 4px solid maroon;
+    height: $header-min-height;
+    border-top: $header-topborder-height solid maroon;
     border-bottom: 1px solid #CCC;
     padding: 0 25px;
 

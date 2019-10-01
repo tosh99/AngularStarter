@@ -1,0 +1,76 @@
+$table-header-bg: #f2f2f2;
+
+.table {
+    font-size: 13px;
+    color: #212529;
+
+    .column {
+        width: 18%;
+        padding: 1%;
+    }
+
+    .column-s {
+        width: 3%;
+        padding: 1%;
+    }
+
+    .column-m {
+        width: 8%;
+        padding: 1%;
+    }
+
+    .column-l {
+        width: 13%;
+        padding: 1%;
+    }
+
+    .column-xl {
+        width: 18%;
+        padding: 1%;
+    }
+
+    .row {
+        display: flex;
+        align-items: center;
+        min-height: 30px;
+    }
+
+    .table-header {
+        background: $table-header-bg;
+        font-weight: 700;
+    }
+
+    .table-data {
+        max-height: 360px;
+        overflow-y: auto;
+
+        .row {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+}
+
+
+/* Sample Code for Table */
+/* ----------------------------------------------------------
+<div class="table">
+    <div class="row table-header">
+        <div class="column">
+            #
+        </div>
+        <div class="column">
+            Name
+        </div>
+    </div>
+    <div class="table-data">
+        <div class="row" *ngFor="let i of [1,2,3];let index = index">
+            <div class="column">
+                {{index + 1}}
+            </div>
+            <div class="column">
+                {{'Name' + index}}
+            </div>
+        </div>
+    </div>
+</div>
+ ---------------------------------------------------------- */

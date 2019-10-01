@@ -13,7 +13,11 @@ export class GlobalStateVariables {
             gbstate = JSON.parse('{}');
         } else {
             if (typeof (gbstate) === 'string') {
-                gbstate = JSON.parse(gbstate);
+                try {
+                    gbstate = JSON.parse(gbstate);
+                } catch (e) {
+                    gbstate = JSON.parse('{}');
+                }
             }
         }
 
@@ -23,20 +27,27 @@ export class GlobalStateVariables {
     // Exposed Functions --------------------------------------------------------------------- //
     public setGlobalState(key, value) {
 
+        // Check Global State Definition
         let temp = GlobalStateVariables._globalState.getValue();
         if (temp === null || temp === undefined) {
             temp = {};
         } else {
             if (typeof (temp) === 'string') {
-                temp = JSON.parse(temp);
+                try {
+                    temp = JSON.parse(temp);
+                } catch (e) {
+                    temp = {};
+                }
+            } else {
+                temp = {};
             }
         }
+
         try {
             temp[key] = value;
         } catch (e) {
             temp = {};
             temp[key] = value;
-
         }
 
         temp[key] = value;

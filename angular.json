@@ -114,6 +114,12 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "Frontend:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "Frontend:build:development"
+                        },
+                        "staging": {
+                            "browserTarget": "Frontend:build:staging"
                         }
                     }
                 },

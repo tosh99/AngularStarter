@@ -1,0 +1,109 @@
+$pagecontainer-background: #F2F2F2;
+$section-bottom-margin: 20px;
+
+
+div:focus, header:focus, button:focus {
+    outline: none;
+}
+
+
+.pagecontainer {
+    padding: 25px;
+    background: $pagecontainer-background;
+    min-height: calc(100vh - 70px - 50px);
+
+    .pagesection {
+        margin-top: 25px;
+        background: white;
+        padding: 25px;
+
+        .pagesection-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $section-bottom-margin;
+
+            .left, .right {
+                display: flex;
+                align-items: center;
+            }
+        }
+    }
+}
+
+
+/* Sample Code for Page Container */
+/* ----------------------------------------------------------
+<div class="pagecontainer">
+    <!--App Loader-->
+    <app-loader *ngIf="loader_params.isdisplayed" (close)="toggleLoader($event)"></app-loader>
+
+    <!--App Message-->
+    <app-message *ngIf="message_params.isdisplayed" [is_message_displayed]="message_params"></app-message>
+
+    <!--Sample Page Section 1-->
+    <div class="pagesection">
+        <header>Buttons</header>
+        <div class="button-container">
+            <div class="left">
+                <button (click)="toggleModal()">Show Modal</button>
+                <button (click)="toggleLoader()">Toggle Loader</button>
+            </div>
+            <div class="right">
+                <button (click)="toggleMessage()">Toggle Message</button>
+            </div>
+        </div>
+    </div>
+
+    <!--Sample Page Section 2-->
+    <div class="pagesection">
+
+    </div>
+</div>
+
+ ---------------------------------------------------------- */
+
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $section-bottom-margin;
+
+
+    .left, .right {
+        display: flex;
+        align-items: center;
+    }
+
+    .left {
+        justify-content: flex-start;
+
+        i, header, button, img {
+            margin-right: 10px;
+        }
+    }
+
+    .right {
+        justify-content: flex-end;
+
+        i, header, button, img {
+            margin-left: 10px;
+        }
+    }
+}
+
+
+/* Sample Code for Button Container */
+/* ----------------------------------------------------------
+<div class="button-container">
+    <div class="left">
+        <button (click)="toggleModal()">Show Modal</button>
+        <button (click)="toggleLoader()">Toggle Loader</button>
+    </div>
+    <div class="right">
+        <button (click)="toggleMessage()">Toggle Message</button>
+    </div>
+</div>
+ ---------------------------------------------------------- */
+

@@ -1,16 +1,32 @@
+//Normal Filled Button
+$btn-bg-color: #ff9e00;
+$btn-font-color: #FFF;
+$btn-bg-image: #ff9e00;
+
+// No Outline (Border) Button
+$btnno-font-color: #000;
+
 /* Buttons */
 button {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 36px;
-    padding: 10px 20px;
-    cursor: pointer;
-    border: 1px solid rgb(220, 220, 220);
-    border-radius: 3px;
-    background: white;
+    min-height: 34px;
+    padding: 8px 15px;
     font-family: $pri-font, $sec-font;
-    transition: 0.5s;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 400;
+    color: $btn-font-color;
+
+    border: 1px solid $btn-bg-color;
+    border-radius: 3px;
+
+    transition: .3s;
+    background-color: $btn-bg-color;
+    background-image: $btn-bg-image;
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#498493, endColorstr=#48778A);
+    cursor: pointer;
 
     i {
         margin: 0 5px;
@@ -28,3 +44,22 @@ button:hover {
 button:focus {
     outline: none;
 }
+
+// Outlined
+button.outline {
+    background: white;
+    color: $btn-bg-color;
+    border: 1px solid $btn-bg-color;
+}
+
+button.nooutline {
+    background: white;
+    color: $btnno-font-color;
+    border: none;
+}
+
+button.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+

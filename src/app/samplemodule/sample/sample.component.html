@@ -13,31 +13,48 @@
     <app-message *ngIf="message_params.isdisplayed" [is_message_displayed]="message_params"></app-message>
 
     <div class="pagesection">
-        <header>Buttons</header>
+        <header class="pagesection-header">Buttons</header>
 
 
         <div class="button-container">
-            <button (click)="toggleModal()">Show Modal</button>
-            <button (click)="toggleLoader()">Toggle Loader</button>
-            <button (click)="toggleMessage()">Toggle Message</button>
+            <div class="left">
+                <button (click)="toggleModal()">Toggle Modal</button>
+                <button class="outline" (click)="toggleLoader()">Toggle Loader</button>
+                <button class="disabled">Disabled Button</button>
+            </div>
+            <div class="right">
+                <button class="nooutline" (click)="toggleMessage()">Toggle Message</button>
+            </div>
         </div>
     </div>
 
     <div class="pagesection">
-        <header>Input Group</header>
+        <header class="pagesection-header">Input Group</header>
 
-        <div class="ig ig-h ig-3">
+        <div class="ig ig-3">
             <div class="ig-item">
-                <header class="ig-item-header">Simple Input</header>
-                <input class="ig-item-input" placeholder="dasda">
+                <header>Simple Input</header>
+                <div class="ig-input ig-input-required">
+                    <input class="ig-item-input" placeholder="dasda">
+                </div>
             </div>
             <div class="ig-item">
-                <header class="ig-item-header">Simple Dropdown</header>
-                <ng-select class="ig-item-dropdown" placeholder="dasda"></ng-select>
+                <header>Simple Dropdown</header>
+                <div class="ig-input">
+                    <ng-select class="ig-item-dropdown" placeholder="dasda"></ng-select>
+                </div>
             </div>
             <div class="ig-item">
-                <header class="ig-item-header">Header</header>
-                <input class="ig-item-input" placeholder="dasda">
+                <header>Header</header>
+                <div class="ig-input">
+                    <input class="ig-item-input" placeholder="dasda">
+                </div>
+            </div>
+            <div class="ig-item">
+                <header>Header</header>
+                <div class="ig-input">
+                    <input class="ig-item-input" placeholder="dasda">
+                </div>
             </div>
         </div>
     </div>

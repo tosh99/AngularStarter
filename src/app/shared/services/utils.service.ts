@@ -15,7 +15,7 @@ export class UtilsService {
     constructor(public http: HttpClient) {
     }
 
-    // Internal Functions --------------------------------------------------------------------- //
+    // Internal HTTP Functions --------------------------------------------------------------------- //
     private getRequest(url) {
         return this.http.get(url);
     }
@@ -26,7 +26,7 @@ export class UtilsService {
 
     public parseEnv(urlkey, method = 'GET', payload = {}) {
 
-        if (environment.serverurl == 'assets/json') {
+        if (environment.serverurl === 'assets/json') {
             method = 'GET'
         }
 
