@@ -78,13 +78,13 @@ export class SampleComponent implements ComponentInterfaceService {
     };
 
     transformData() {
-    };
+    }
 
 
     toggleModal(action?) {
         if (action === true || action === false) {
             // Action Here
-            this.modal_params.isdisplayed = action;
+            this.modal_params.isdisplayed = false;
         } else {
             this.modal_params.isdisplayed = !this.modal_params.isdisplayed;
         }

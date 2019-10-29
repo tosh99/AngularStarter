@@ -4,11 +4,11 @@ import {SampleComponent} from './sample/sample.component';
 import {SharedServicesModule} from "../shared/shared-services.module";
 import {FormsModule} from "@angular/forms";
 import {SampleModuleRoutingModule} from "./sample-module-routing.module";
-import {NgSelectModule} from "@ng-select/ng-select";
 import {HeaderModule} from "../shared/components/header/header.module";
 import {MessageModule} from "../shared/components/message/message.module";
 import {LoaderModule} from "../shared/components/loader/loader.module";
 import {ModalModule} from "../shared/components/modal/modal.module";
+import {DropdownModule} from "../shared/components/dropdown/dropdown.module";
 
 @NgModule({
     declarations: [SampleComponent],
@@ -20,7 +20,6 @@ import {ModalModule} from "../shared/components/modal/modal.module";
         SampleModuleRoutingModule,
 
         // Libraries
-        NgSelectModule,
 
         // Shared Services Modules
         SharedServicesModule,
@@ -29,7 +28,8 @@ import {ModalModule} from "../shared/components/modal/modal.module";
         HeaderModule,
         MessageModule,
         LoaderModule,
-        ModalModule
+        ModalModule,
+        DropdownModule
     ]
 })
 export class SamplemoduleModule {

@@ -33,15 +33,25 @@
 
         <div class="ig ig-3">
             <div class="ig-item">
-                <header>Simple Input</header>
+                <header class="header">Simple Input</header>
                 <div class="ig-input ig-input-required">
                     <input class="ig-item-input" placeholder="dasda">
                 </div>
             </div>
             <div class="ig-item">
-                <header>Simple Dropdown</header>
+                <header class="header">Simple Dropdown</header>
                 <div class="ig-input">
-                    <ng-select class="ig-item-dropdown" placeholder="dasda"></ng-select>
+<!--                                            [items]="[{'name':'Anutosh', 'id':1},{'name':'Mohit', 'id':2}]"-->
+
+                    <app-dropdown
+                        [items]="['1','2']"
+                        [isMultiSelect]="true"
+                        [selectedItem]="['1']"
+                        [isAddTag]="true"
+
+                    >
+
+                    </app-dropdown>
                 </div>
             </div>
             <div class="ig-item">
@@ -61,7 +71,26 @@
 
     <div class="pagesection">
         <header>Table</header>
-
+        <div class="table">
+            <div class="row table-header">
+                <div class="column">
+                    #
+                </div>
+                <div class="column">
+                    Name
+                </div>
+            </div>
+            <div class="table-data">
+                <div class="row" *ngFor="let i of [1,2,3];let index = index">
+                    <div class="column">
+                        {{index + 1}}
+                    </div>
+                    <div class="column">
+                        {{'Name' + index}}
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 

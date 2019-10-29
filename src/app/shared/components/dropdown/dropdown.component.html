@@ -1,0 +1,87 @@
+<div class="dropdown" [ngClass]="{'material':theme === 'material','default':theme === 'default'}" [ngStyle]="style">
+    <!--Button Container-->
+    <div #parentdiv class="dropdown-button" [ngClass]="{'dropdown-open':isItemsDisplayed}" id="app-dropdown-id" (click)="toggleItemDisplay()">
+
+        <!-- Single Select Container-->
+        <div class="singleselect-container" *ngIf="!isMultiSelect">
+
+            <!-- Actual Text Displayed-->
+            <div class="placeholder">
+                <header *ngIf="selectedItem === undefined">{{placeholder}}</header>
+                <header *ngIf="selectedItem && bindLabel">{{selectedItem[bindLabel]}}</header>
+                <header *ngIf="selectedItem && !bindLabel">{{selectedItem}}</header>
+            </div>
+
+            <!-- Delete Icon and Texts-->
+            <div class="deletecontainer" (click)="clearSelected()" *ngIf="isClearable && selectedItem !== undefined">
+                <header *ngIf="style['deleteiconsrc'] === undefined && theme === 'default'">X</header>
+                <img alt="" *ngIf="style['deleteiconsrc'] !== undefined && theme === 'default'" [src]="style['deleteiconsrc']" width="20" height="20">
+                <i *ngIf="theme === 'material'" class="fas fa-times"></i>
+            </div>
+        </div>
+
+        <!-- Multi Select Container-->
+        <div class="multiselect-container" *ngIf="isMultiSelect">
+
+            <ng-container *ngIf="selectedItem">
+
+                <!-- Actual Text Displayed-->
+                <div class="multiselect-item-container" *ngIf="selectedItem.length > 0">
+                    <div class="multiselect-item" *ngFor="let item of selectedItem">
+                        <header *ngIf="item[bindLabel] === undefined">{{item}}<span (click)="deleteItem(item)">X</span></header>
+                        <header *ngIf="item[bindLabel] !== undefined">{{item[bindLabel]}}<span (click)="deleteItem(item)">X</span></header>
+                    </div>
+                </div>
+
+                <!-- Placeholder-->
+                <div class="placeholder multiselect-placeholder" [ngClass]="{'spread':selectedItem.length > 0}" *ngIf="selectedItem.length === 0">
+                    <header *ngIf="selectedItem.length === 0">{{placeholder}}</header>
+                </div>
+            </ng-container>
+
+
+            <ng-container *ngIf="!selectedItem">
+
+                <!-- Placeholder-->
+                <div class="placeholder multiselect-placeholder">
+                    <header>{{placeholder}}</header>
+                </div>
+            </ng-container>
+
+            <!-- Delete Icon and Texts-->
+            <div class="deletecontainer" (click)="clearSelected()" *ngIf="isClearable && selectedItem !== undefined && selectedItem.length > 0">
+                <header *ngIf="style['deleteiconsrc'] === undefined && theme === 'default'">X</header>
+                <img alt="" *ngIf="style['deleteiconsrc'] !== undefined && theme === 'default'" [src]="style['deleteiconsrc']" width="20" height="20">
+                <i *ngIf="theme === 'material'" class="fas fa-times"></i>
+            </div>
+        </div>
+    </div>
+
+    <!--Content Container-->
+    <div class="dropdown-content" (click)="stopPropagation()" *ngIf="isItemsDisplayed" [style.marginTop.px]="parentdiv.offsetHeight">
+
+        <!--List of Items (no error)-->
+        <div class="dropdown-items" *ngIf="!isErrorOccured">
+            <div class="dropdown-search-box" *ngIf="isSearchable">
+                <input placeholder="Search..." [(ngModel)]="searchText" (keyup.enter)="addMultiItems()">
+            </div>
+
+            <header class="customItems" *ngIf="items.length > 0 && customItems.length > 0 && isAddTag">Custom Items</header>
+            <div *ngFor="let item of customItems | textFilter:[searchText,bindLabel]" class="dropdown-item" (click)="selectItem(item)">
+                <header *ngIf="bindLabel === undefined">{{item}}</header>
+                <header *ngIf="bindLabel !== undefined">{{item[bindLabel]}}</header>
+            </div>
+
+            <header class="customItems" *ngIf="items.length > 0 && customItems.length > 0 && isAddTag">Regular Items</header>
+            <div *ngFor="let item of items | textFilter:[searchText,bindLabel]" class="dropdown-item" (click)="selectItem(item)">
+                <header *ngIf="bindLabel === undefined">{{item}}</header>
+                <header *ngIf="bindLabel !== undefined">{{item[bindLabel]}}</header>
+            </div>
+        </div>
+
+        <!-- Error Message-->
+        <div class="dropdown-no-item-error" *ngIf="isErrorOccured">
+            <header>{{errormessage}}</header>
+        </div>
+    </div>
+</div>

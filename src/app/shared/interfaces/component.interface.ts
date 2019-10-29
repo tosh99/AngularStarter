@@ -75,13 +75,13 @@ export class ComponentInterfaceService implements ComponentInterface {
     public coredata: any;
 
     loadMetaData() {
-    };
+    }
 
     loadData() {
-    };
+    }
 
     transformData() {
-    };
+    }
 
 
     toggleModal(event?) {

@@ -42,7 +42,7 @@ input:focus {
         .ig-input {
             border-left: 4px solid white;
 
-            header {
+            .header {
                 font-size: 14px;
                 font-weight: 400;
                 color: $ig-item-font-color;
@@ -115,6 +115,15 @@ input:focus {
                             }
                         }
                     }
+                }
+            }
+
+
+            .dropdown, .default, .material {
+                border: 1px solid $ig-item-input-border;
+
+                .dropdown-button {
+                    border: none;
                 }
             }
         }
