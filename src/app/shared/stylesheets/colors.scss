@@ -1,9 +1,40 @@
-/* Brand Colors */
-$accent-color: #0278EC;
-$primary-color: #0267C9;
-$secondary-color: #EDF3FC;
+/* ------------  Brand Colors  ---------------- */
+$ac_clr: #0278EC;
+$pr_clr: #0267C9;
+$sc_clr: #EDF3FC;
 
-/* Borders */
+/* -----------  Border Colors  ---------------- */
 $border-color: rgb(208, 222, 230);
 
 
+/* -----------  Button Colors  ---------------- */
+$btn-bg-color: #ff9e00;
+$btn-font-color: #FFF;
+$btn-bg-image: #ff9e00;
+$btn-no-outline-font-color: #000;
+
+
+/* -----------  Font Colors  ------------------- */
+$font_clr_primary: rgb(94, 90, 95);
+$font_clr_secondary: rgba(9, 20, 37, 0.59);
+$font_clr_tertiary: rgba(0, 0, 0, 0.13);
+$warning_font_clr: rgb(185, 43, 52);
+$tooltipfont: rgb(185, 43, 52);
+
+
+/* -----------  Input Group Colors  ------------ */
+$input-border: #000;
+
+//Input Group Params
+$ig-item-font-color: #53565A;
+$ig-item-placeholder-color: #98A4AE;
+$ig-item-input-border: #CFDDE6;
+$ig-input-required: #ED8B00;
+
+
+/* -----------  Page Layout Colors  ------------ */
+$pagecontainer-background: #F2F2F2;
+
+
+/* -----------  Table Colors  ------------------ */
+$table-header-bg: #f2f2f2;

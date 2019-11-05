@@ -1,19 +1,11 @@
-//Normal Filled Button
-$btn-bg-color: #ff9e00;
-$btn-font-color: #FFF;
-$btn-bg-image: #ff9e00;
-
-// No Outline (Border) Button
-$btnno-font-color: #000;
-
 /* Buttons */
 button {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 34px;
+    min-height: $btn-min-height;
     padding: 8px 15px;
-    font-family: $pri-font, $sec-font;
+    font-family: $primary-font, $secondary-font;
     font-size: 14px;
     text-decoration: none;
     font-weight: 400;
@@ -54,7 +46,7 @@ button.outline {
 
 button.nooutline {
     background: white;
-    color: $btnno-font-color;
+    color: $btn-no-outline-font-color;
     border: none;
 }
 

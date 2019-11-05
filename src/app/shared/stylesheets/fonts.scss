@@ -1,19 +1,7 @@
-/* Angular Theming */
-$pri-font: 'Nunito Sans';
-$sec-font: 'sans-serif';
-
-/* Fonts */
-$primaryfont: rgb(94, 90, 95);
-$secondaryfont: rgba(9, 20, 37, 0.59);
-$tertiaryfont: rgba(0, 0, 0, 0.13);
-$warningfont: rgb(185, 43, 52);
-$tooltipfont: rgb(185, 43, 52);
-
-
 h1, h2, h3, h4, h5, h6, header, section, p, a, b, title, textarea, input {
     margin: 0;
     padding: 0;
-    font-family: $pri-font, $sec-font;
+    font-family: $primary-font, $secondary-font;
 }
 
 
