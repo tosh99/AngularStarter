@@ -4,9 +4,91 @@ customisable components and standards for pretty much everything.
 
 View Demo [Here](https://tosh99.github.io/AngularStarter/)
 
-## App Module
-> This should be absolutely lightweight. Never add any module or component here. All 
-modules should handle their own functionalities.
+This repo serves as an Angular Starter Blueprint for anyone looking to get up and running with Angular and TypeScript fast. 
+
+- Best practices in file and application organization for Angular.
+- Pre included state of the art libraries
+- A great Angular seed repo for anyone who wants to start their project.
+- Ahead of Time (AoT) compile for rapid page loads of your production builds.
+- Tree shaking to automatically remove unused code from your production bundle.
+
+
+## Installation
+##### Make sure you have Node version >= 10
+> Clone/Download the repo then run these commands
+```
+# Install Dependencies
+npm i
+
+# Start Server
+ng serve --o
+```
+
+Go to [http://localhost:4200](http://localhost:4200) to view your app
+
+
+## Table of Contents
+- [Folder Structure]()
+- [Environment Management]()
+    - [Design guidelines]()
+    - [Configuration]()
+- [Designing Modules]()
+    - [How to design modules]()
+    - [AppModule]()
+    - [SharedModule]()
+- [Designing Components]()
+    - [How to design components]()
+    - [AppComponent]()
+- [Libraries]()
+    - [Preincluded libraries]()
+    - [Configuring Styling for the libraries]()
+- [Styles]()
+    - [Styling guidelines]()
+    - [Global Styles]()
+- [Asset Management]()
+    - [Shared Assets]()
+    - [Module Specific Assets]()
+- [Building]()
+    - [Environment specific builds]()
+
+### 1. Folder Structure
+The current folder structure is described below
+
+- Core Angular Files
+    - package.json
+    - angular.json
+    - .editorconfig
+
+
+
+
+### 2. Environment Management
+
+
+#### 2.1 Design guidelines
+asdasdasda
+
+#### 2.1 Configuration
+asdasdasadasda
+
+
+### 3. Designing Modules
+asdasdasadasda
+
+### 4. Designing Components
+asdasdasadasda
+
+### 5. Libraries
+asdasdasadasda
+
+### 6. Styles
+asdasdasadasda
+
+### 7. Asset Management
+asdasdasadasda
+
+### 8. Building
+>asdasdasadasda
 
 ## Global Components
 > These components have been pre-included and their usage guidelines are mentioned 
@@ -89,4 +171,5 @@ const message_params = {
 
 ## Component Blueprint
 > This is the standard component design guideline to be followed
+
 
