@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 export interface ComponentInterface {
-    app_params: {
+    page_params: {
         user: {},
         isinitialised: boolean;
     };
@@ -45,7 +45,7 @@ export interface ComponentInterface {
 @Injectable()
 export class ComponentInterfaceService implements ComponentInterface {
     // UI Variables
-    public app_params = {
+    public page_params = {
         user: {},
         isinitialised: false
     };

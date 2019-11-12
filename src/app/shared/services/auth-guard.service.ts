@@ -17,6 +17,7 @@ export class AuthGuard implements CanActivate {
                 gbstate = JSON.parse(gbstate);
             }
 
+            // Checking Condition for Auth Guard
             if (!gbstate['user']) {
                 this.router.navigateByUrl('/');
                 return false;

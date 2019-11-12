@@ -43,6 +43,7 @@ export class GlobalStateVariables {
             }
         }
 
+        // Set Global State Value
         try {
             temp[key] = value;
         } catch (e) {
@@ -51,8 +52,8 @@ export class GlobalStateVariables {
         }
 
         temp[key] = value;
-        GlobalStateVariables._globalState.next(temp);
         localStorage.setItem('globalState', JSON.stringify(temp));
+        GlobalStateVariables._globalState.next(temp);
     }
 
     public removeGlobalState(key) {

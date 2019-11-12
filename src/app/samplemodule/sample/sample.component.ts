@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ComponentInterfaceService} from "../../shared/interfaces/component.interface";
+import {ComponentInterfaceService} from "../../shared/models/interfaces/component.interface";
 import {GlobalStateVariables} from "../../shared/services/globalstate.service";
 import {UtilsService} from "../../shared/services/utils.service";
 
@@ -10,7 +10,7 @@ import {UtilsService} from "../../shared/services/utils.service";
 })
 export class SampleComponent implements ComponentInterfaceService {
     // UI Variables
-    public app_params = {
+    public page_params = {
         isinitialised: false,
         user: {}
     };
@@ -43,8 +43,8 @@ export class SampleComponent implements ComponentInterfaceService {
 
     constructor(private globalstate: GlobalStateVariables, private service: UtilsService) {
         GlobalStateVariables._globalState.subscribe((val) => {
-            if (!this.app_params.isinitialised) {
-                this.app_params.isinitialised = true;
+            if (!this.page_params.isinitialised) {
+                this.page_params.isinitialised = true;
 
 
             }
