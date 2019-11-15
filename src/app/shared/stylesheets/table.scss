@@ -1,33 +1,33 @@
-.table {
+.custom-table {
     font-size: 13px;
     color: #212529;
 
-    .column {
+    .table-column {
         width: 18%;
         padding: 1%;
     }
 
-    .column-s {
+    .table-column-small {
         width: 3%;
         padding: 1%;
     }
 
-    .column-m {
+    .table-column-medium {
         width: 8%;
         padding: 1%;
     }
 
-    .column-l {
+    .table-column-large {
         width: 13%;
         padding: 1%;
     }
 
-    .column-xl {
+    .table-column-extra-large {
         width: 18%;
         padding: 1%;
     }
 
-    .row {
+    .table-row {
         display: flex;
         align-items: center;
         min-height: 30px;
@@ -42,7 +42,7 @@
         max-height: 360px;
         overflow-y: auto;
 
-        .row {
+        .table-row {
             border-bottom: 1px solid $border-color;
         }
     }

@@ -5,14 +5,14 @@
 <app-modal *ngIf="modal_params.isdisplayed" [is_modal_displayed]="modal_params" (close)="toggleModal($event)"></app-modal>
 
 <!--This is the main container. It must be included in every page since it has important stylings associated with it-->
-<div class="pagecontainer">
+<div class="custom-page-container">
     <!--App Loader-->
     <app-loader *ngIf="loader_params.isdisplayed" (close)="toggleLoader($event)"></app-loader>
 
     <!--App Message-->
     <app-message *ngIf="message_params.isdisplayed" [is_message_displayed]="message_params"></app-message>
 
-    <div class="container">
+    <div class="custom-container">
         <header>Button Group Example</header>
         <div class="button-container">
             <div class="left">
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="custom-container">
         <header>Input Group (Three Item) Example</header>
         <div class="ig ig-3">
             <div class="ig-item">
@@ -39,9 +39,10 @@
                 <header class="ig-item-header">Dropdown Example</header>
                 <div class="ig-input">
                     <app-dropdown
-                        [items]="['1','2']"
+                        [placeholder]="'Select Drinks'"
+                        [items]="['Mango Juice', 'Apple Juice', 'Water Melon']"
                         [isMultiSelect]="true"
-                        [selectedItem]="['1']"
+                        [selectedItem]="['Mango Juice']"
                         [isSearchable]="true"
                         [isAddTag]="true">
                     </app-dropdown>
@@ -64,7 +65,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="custom-container">
         <header>Input Group (Two Item) Example</header>
         <div class="ig ig-2">
             <div class="ig-item">
@@ -77,9 +78,9 @@
                 <header class="ig-item-header">Dropdown Example</header>
                 <div class="ig-input">
                     <app-dropdown
-                        [items]="['1','2']"
-                        [isMultiSelect]="true"
-                        [selectedItem]="['1']"
+                        [placeholder]="'Select Fruits'"
+                        [items]="['Mango', 'Apple', 'Water Melon']"
+                        [selectedItem]="'Mango'"
                         [isSearchable]="true"
                         [isAddTag]="true">
                     </app-dropdown>
@@ -102,41 +103,41 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="custom-container">
         <header>Table Example</header>
-        <div class="table">
-            <div class="row table-header">
-                <div class="column-s">
+        <div class="custom-table">
+            <div class="table-row table-header">
+                <div class="table-column-small">
                     ID
                 </div>
-                <div class="column-m">
+                <div class="table-column-medium">
                     Name
                 </div>
-                <div class="column-l">
+                <div class="table-column-large">
                     Age
                 </div>
-                <div class="column-xl">
+                <div class="table-column-extra-large">
                     Profession
                 </div>
-                <div class="column">
+                <div class="table-column">
                     Actions
                 </div>
             </div>
             <div class="table-data">
-                <div class="row" *ngFor="let i of [1,2,3];let index = index">
-                    <div class="column-s">
+                <div class="table-row" *ngFor="let i of [1,2,3];let index = index">
+                    <div class="table-column-small">
                         {{index + 1}}
                     </div>
-                    <div class="column-m">
+                    <div class="table-column-medium">
                         {{'Name' + index}}
                     </div>
-                    <div class="column-l">
+                    <div class="table-column-large">
                         {{'Name' + index}}
                     </div>
-                    <div class="column-xl">
+                    <div class="table-column-extra-large">
                         {{'Name' + index}}
                     </div>
-                    <div class="column">
+                    <div class="table-column">
                         {{'Name' + index}}
                     </div>
                 </div>

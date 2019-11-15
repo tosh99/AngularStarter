@@ -53,13 +53,13 @@ export class SampleComponent implements ComponentInterfaceService {
 
     /*  --------------------------------   Base Implementations  ---------------------- */
 
-    // Function for retreiving dropdown Values
+    // Function for retrieving dropdown Values
     loadMetaData() {
         this.toggleLoader(true);
         this.toggleMessage(false);
-    };
+    }
 
-    // Function for retreiving data Values
+    // Function for retrieving data Values
     loadData() {
         this.toggleLoader(true);
         this.toggleMessage(false);
@@ -75,7 +75,7 @@ export class SampleComponent implements ComponentInterfaceService {
         })
 
 
-    };
+    }
 
     transformData() {
     }

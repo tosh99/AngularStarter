@@ -6,12 +6,12 @@ div:focus, header:focus, button:focus {
 }
 
 
-.pagecontainer {
+.custom-page-container {
     padding: 25px;
     background: $pagecontainer-background;
     min-height: calc(100vh - 70px - 50px);
 
-    .container {
+    .custom-container {
         margin-top: 25px;
         background: white;
         padding: $pagecontainer-padding;

@@ -48,15 +48,17 @@ export class DropdownComponent implements OnChanges {
     ngOnChanges() {
         this.isErrorOccured = false;
 
-        if (this.bindValue && !this.bindLabel) {
-            this.toggleErrorMessage('Please provide both bind label and bind value');
-        } else if (!this.bindValue && this.bindLabel) {
-            this.toggleErrorMessage('Please provide both bind label and bind value');
+        if ((this.bindValue && !this.bindLabel) || (!this.bindValue && this.bindLabel)) {
+            this.bindLabel = this.bindValue;
         }
 
         if (this.isMultiSelect === true) {
             if (this.selectedItem.constructor !== Array) {
                 this.toggleErrorMessage('`selectedItem` must be an Array if `isMultiSelect` is true');
+            }
+        } else {
+            if (this.selectedItem.constructor === Array) {
+                this.toggleErrorMessage('`selectedItem` must not be an Array if `isMultiSelect` is not true');
             }
         }
 
@@ -130,6 +132,47 @@ export class DropdownComponent implements OnChanges {
         } else {
             this.isErrorOccured = false;
             this.errormessage = '';
+        }
+    }
+
+
+    get getPlaceHolderText() {
+        if (this.bindLabel === undefined || this.bindLabel === '' || this.bindLabel === null) {
+            if (this.selectedItem === '' || this.selectedItem === null || this.selectedItem === undefined) {
+                return this.placeholder;
+            } else {
+                return this.selectedItem;
+            }
+        } else {
+            if (this.selectedItem === '' || this.selectedItem === null || this.selectedItem === undefined) {
+                return this.placeholder;
+            } else {
+                try {
+                    return this.selectedItem[this.bindLabel];
+                } catch (e) {
+                    this.toggleErrorMessage('Please use a valid "bindLabel"');
+                }
+            }
+        }
+
+        return this.placeholder;
+    }
+
+
+    get isPlaceHolder() {
+        if (this.bindLabel === undefined || this.bindLabel === '' || this.bindLabel === null) {
+            return this.selectedItem === '' || this.selectedItem === null || this.selectedItem === undefined;
+        } else {
+            if (this.selectedItem === '' || this.selectedItem === null || this.selectedItem === undefined) {
+                return true;
+            } else {
+                try {
+                    const placeholder = this.selectedItem[this.bindLabel];
+                    return false;
+                } catch (e) {
+                    return true;
+                }
+            }
         }
     }
 }

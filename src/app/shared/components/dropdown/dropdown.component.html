@@ -1,22 +1,18 @@
-<div class="dropdown" [ngClass]="{'material':theme === 'material','default':theme === 'default'}" [ngStyle]="style">
+<div class="custom-dropdown" [ngClass]="{'material':theme === 'material','default':theme === 'default'}" [ngStyle]="style">
     <!--Button Container-->
     <div #parentdiv class="dropdown-button" [ngClass]="{'dropdown-open':isItemsDisplayed}" id="app-dropdown-id" (click)="toggleItemDisplay()">
 
         <!-- Single Select Container-->
         <div class="singleselect-container" *ngIf="!isMultiSelect">
-
-            <!-- Actual Text Displayed-->
             <div class="placeholder">
-                <header *ngIf="selectedItem === undefined">{{placeholder}}</header>
-                <header *ngIf="selectedItem && bindLabel">{{selectedItem[bindLabel]}}</header>
-                <header *ngIf="selectedItem && !bindLabel">{{selectedItem}}</header>
+                <header [ngClass]="{'placeholdertext':isPlaceHolder}">{{getPlaceHolderText}}</header>
             </div>
 
             <!-- Delete Icon and Texts-->
-            <div class="deletecontainer" (click)="clearSelected()" *ngIf="isClearable && selectedItem !== undefined">
-                <header *ngIf="style['deleteiconsrc'] === undefined && theme === 'default'">X</header>
-                <img alt="" *ngIf="style['deleteiconsrc'] !== undefined && theme === 'default'" [src]="style['deleteiconsrc']" width="20" height="20">
-                <i *ngIf="theme === 'material'" class="fas fa-times"></i>
+            <div class="deletecontainer" (click)="clearSelected()">
+                <img alt="" *ngIf="style['deleteiconsrc'] !== undefined" [src]="style['deleteiconsrc']" width="20" height="20">
+                <i *ngIf="isClearable && style['deleteiconsrc'] === undefined" class="fas fa-times"></i>
+                <i class="fas" [ngClass]="{'fa-angle-down':!isItemsDisplayed, 'fa-angle-up':isItemsDisplayed}"></i>
             </div>
         </div>
 

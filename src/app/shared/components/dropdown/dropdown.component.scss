@@ -5,7 +5,7 @@ $min-height: 37px;
 $min-width: 100px;
 $width: 100%;
 
-.dropdown {
+.custom-dropdown {
     display: flex;
     min-height: $min-height;
     min-width: $min-width;
@@ -28,10 +28,14 @@ $width: 100%;
 
             header {
                 margin-bottom: 0;
-                color: $ig-item-placeholder-color;
+                color: $ig-item-font-color;
                 font-weight: 400;
                 font-size: 14px;
                 min-height: auto;
+            }
+
+            .placeholdertext {
+                color: $ig-item-placeholder-color;
             }
 
         }
@@ -39,6 +43,10 @@ $width: 100%;
         .deletecontainer {
             display: flex;
             align-items: center;
+
+            i {
+                margin: 0 2.5px;
+            }
         }
 
         .singleselect-container {

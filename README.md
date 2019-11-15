@@ -97,7 +97,7 @@ have been designed as modules for easier import into modules wherever they are r
 
 | Directive         | Description   | Usage  |
 | -------------     |---------------| -------|
-| Contenteditale    | This is to create dynamic containers with variable height | ```<div [appContentEditableModel]="ngmodel_variable" (appContentEditableModelChange)="change($event)"></div>``` |
+| Contenteditable   | This is to create dynamic containers with variable height | ```<div [appContentEditableModel]="ngmodel_variable" (appContentEditableModelChange)="change($event)"></div>``` |
 
 > For components, see below
 
@@ -111,47 +111,60 @@ to the required module
 
 ##### Global Reusable Components
 
+> Dropdown
 
-| Dropdown          | Description           | Params    |
-| -------------     |---------------        | -------   |
-|           | A feature loaded dropdown component  |           |
+| Input Params           | Description    |
+|------------------------| -------------- |
+| items                  |                |
+| selectedItem           |                |
+| placeholder            |                |
+| bindLabel              |                |
+| bindValue              |                |
+| isSearchable           |                |
+| isClearable            |                |
+| isMultiSelect          |                |
+| isAddTag               |                |
+| style                  |                |
+| theme                  |                |
+| isDebugMode            |                |
+
+> Message
+
+| Input Params           | Description    | Default Value |
+|------------------------| -------------- |-------------|
+| is_message_displayed   |                |{type: 'message',message: '',isdisplayed: false};|
 
 
 
-| Loader            | Description           | Params    |
-| -------------     |---------------        | -------   |
-|           | A simple loader with styles  |           |
+
+> Loader
+
+| Input Params           | Description    | Default Value |
+|------------------------| -------------- |-------------|
+| styles                 |                |{height: '200px', position: 'relative'}
 
 
+> Modal
 
-| Message           | Description           | Params    |
-| -------------     |---------------        | -------   |
-|           | A simple message with styles   |           |
-
-
-
-| Modal           | Description           | Params    |
-| -------------     |---------------        | -------   |
-|           | A modal/popup component  |           |
+| Input Params           | Description    | Default Value |
+|------------------------| -------------- |-------------|
+| is_modal_displayed     |                |{type: 'confirmation', headertext: 'Modal Header', content: 'Modal Body', affirmtext: 'Proceed', canceltext: 'Cancel'};
 
 
 ##### Global Requirement Based Components
 
+> Header
 
-| Header           | Description           | Params    |
-| -------------     |---------------        | -------   |
-|           | A reusable application header component  |           |
-
+You can go and change the styles and markup directly in the header module.
 
 
 
 
 
+### Libraries
+> Only bootstrap has been used as of now
 
-### 5. Libraries
-asdasdasadasda
-
-### 6. Styles
+### Styles
 Default styles have been provided for the following components. 
 
 1. [Global](https://github.com/tosh99/AngularStarter/blob/master/src/styles.scss)
@@ -174,8 +187,7 @@ All the table related styles are present here along with an example.
 Various standard dimensions are present here
 
 ### Asset Management
-To be built
+WIP
 
 ### Building
-To be built
-
+WIP
