@@ -52,13 +52,15 @@ export class DropdownComponent implements OnChanges {
             this.bindLabel = this.bindValue;
         }
 
-        if (this.isMultiSelect === true) {
-            if (this.selectedItem.constructor !== Array) {
-                this.toggleErrorMessage('`selectedItem` must be an Array if `isMultiSelect` is true');
-            }
-        } else {
-            if (this.selectedItem.constructor === Array) {
-                this.toggleErrorMessage('`selectedItem` must not be an Array if `isMultiSelect` is not true');
+        if (this.selectedItem !== undefined && this.selectedItem !== null) {
+            if (this.isMultiSelect === true) {
+                if (this.selectedItem.constructor !== Array) {
+                    this.toggleErrorMessage('`selectedItem` must be an Array if `isMultiSelect` is true');
+                }
+            } else {
+                if (this.selectedItem.constructor === Array) {
+                    this.toggleErrorMessage('`selectedItem` must not be an Array if `isMultiSelect` is not true');
+                }
             }
         }
 
@@ -78,7 +80,12 @@ export class DropdownComponent implements OnChanges {
 
     selectItem(item) {
         if (this.isMultiSelect === false) {
-            this.selectedItem = item;
+
+            if (this.bindValue !== undefined && this.bindValue !== '') {
+                this.selectedItem = item[this.bindValue];
+            } else {
+                this.selectedItem = item;
+            }
         } else {
             if (this.selectedItem === undefined) {
                 this.selectedItem = [];
@@ -86,8 +93,7 @@ export class DropdownComponent implements OnChanges {
             this.selectedItem.push(item);
         }
         this.selectedItemChange.emit(this.selectedItem);
-
-
+        this.toggleItemDisplay();
     }
 
     clearSelected() {
@@ -109,7 +115,7 @@ export class DropdownComponent implements OnChanges {
     addMultiItems() {
         if (this.isAddTag) {
             if (!this.customItems) {
-                this.customItems = []
+                this.customItems = [];
             }
 
             if (this.bindLabel) {
@@ -148,7 +154,11 @@ export class DropdownComponent implements OnChanges {
                 return this.placeholder;
             } else {
                 try {
-                    return this.selectedItem[this.bindLabel];
+                    for (const i of this.items) {
+                        if (this.selectedItem === i[this.bindValue]) {
+                            return i[this.bindLabel];
+                        }
+                    }
                 } catch (e) {
                     this.toggleErrorMessage('Please use a valid "bindLabel"');
                 }
