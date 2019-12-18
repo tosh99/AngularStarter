@@ -34,7 +34,7 @@
     }
 
     .table-header {
-        background: $table-header-bg;
+        background: $table_header_bg_color;
         font-weight: 700;
     }
 
@@ -43,7 +43,7 @@
         overflow-y: auto;
 
         .table-row {
-            border-bottom: 1px solid $border-color;
+            border-bottom: 1px solid $border_color;
         }
     }
 }

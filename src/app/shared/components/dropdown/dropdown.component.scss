@@ -1,9 +1,12 @@
-@import "~src/styles";
-
 //Dimensions
 $min-height: 37px;
 $min-width: 100px;
 $width: 100%;
+
+//Colors
+$ig-item-font-color: #53565A;
+$ig-item-placeholder-color: #CCC;
+$border: 1px solid #CCC;
 
 .custom-dropdown {
     display: flex;
@@ -28,7 +31,6 @@ $width: 100%;
 
             header {
                 margin-bottom: 0;
-                color: $ig-item-font-color;
                 font-weight: 400;
                 font-size: 14px;
                 min-height: auto;

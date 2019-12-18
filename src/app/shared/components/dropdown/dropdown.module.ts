@@ -1,8 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SharedServicesModule} from '../../shared-services.module';
 import {DropdownComponent} from './dropdown.component';
-import {TextFilterPipe} from '../../directives/dropdownfilter.pipe';
+import {TextFilterPipe} from './dropdownfilter.pipe';
 import {FormsModule} from '@angular/forms';
 
 
@@ -11,7 +10,6 @@ import {FormsModule} from '@angular/forms';
     imports: [
         CommonModule,
         FormsModule,
-        SharedServicesModule,
     ],
     exports: [DropdownComponent, TextFilterPipe]
 })

@@ -3,21 +3,19 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: $btn-min-height;
+    min-height: $button_min_height;
     padding: 8px 15px;
-    font-family: $primary-font, $secondary-font;
+    font-family: $pri_font_family, $sec_font_family;
     font-size: 14px;
     text-decoration: none;
     font-weight: 400;
-    color: $btn-font-color;
+    color: $button_font_color;
 
-    border: 1px solid $btn-bg-color;
+    border: 1px solid $button_background;
     border-radius: 3px;
 
     transition: .3s;
-    background-color: $btn-bg-color;
-    background-image: $btn-bg-image;
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr=#498493, endColorstr=#48778A);
+    background-color: $button_background;
     cursor: pointer;
 
     i {
@@ -40,13 +38,13 @@ button:focus {
 // Outlined
 button.outline {
     background: white;
-    color: $btn-bg-color;
-    border: 1px solid $btn-bg-color;
+    color: $button_background;
+    border: 1px solid $button_background;
 }
 
 button.nooutline {
     background: white;
-    color: $btn-no-outline-font-color;
+    color: $button_no_outline_font_color;
     border: none;
 }
 

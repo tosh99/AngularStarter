@@ -1,13 +1,13 @@
 import {Component, OnInit} from '@angular/core';
-import {GlobalStateVariables} from "../../services/globalstate.service";
-import {Router} from "@angular/router";
+import {GlobalStateVariables} from '../../services/globalstate.service';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-header',
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
     public user = {name: 'John'};
 
     constructor(private globalstate: GlobalStateVariables, private router: Router) {
@@ -17,15 +17,11 @@ export class HeaderComponent implements OnInit {
                 this.user = val['user'];
             }
         });
-
-    }
-
-    ngOnInit() {
     }
 
     logout() {
         this.globalstate.clearGlobalState();
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/');
     }
 
 }

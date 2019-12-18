@@ -31,22 +31,23 @@ export class DropdownComponent implements OnChanges {
 
     // Internal UI Variables
     customItems = [];
-    isItemsDisplayed = false;
-    isErrorOccured = false;
+    searchText: string;
     errormessage = '';
 
-    searchText: string;
+    // UI Flags
+    _flag_is_dropdown_content_displayed = false;
+    _flag_is_error_occured = false;
 
 
     constructor() {
     }
 
     @HostListener('document:click', ['$event']) clickedOutside($event) {
-        this.isItemsDisplayed = false;
+        this._flag_is_dropdown_content_displayed = false;
     }
 
     ngOnChanges() {
-        this.isErrorOccured = false;
+        this._flag_is_error_occured = false;
 
         if ((this.bindValue && !this.bindLabel) || (!this.bindValue && this.bindLabel)) {
             this.bindLabel = this.bindValue;
@@ -72,7 +73,7 @@ export class DropdownComponent implements OnChanges {
 
     toggleItemDisplay() {
         event.stopPropagation();
-        this.isItemsDisplayed = !this.isItemsDisplayed;
+        this._flag_is_dropdown_content_displayed = !this._flag_is_dropdown_content_displayed;
         if (this.items === undefined) {
             this.toggleErrorMessage('Loading...');
         }
@@ -133,10 +134,10 @@ export class DropdownComponent implements OnChanges {
 
     toggleErrorMessage(message?) {
         if (message) {
-            this.isErrorOccured = true;
+            this._flag_is_error_occured = true;
             this.errormessage = message;
         } else {
-            this.isErrorOccured = false;
+            this._flag_is_error_occured = false;
             this.errormessage = '';
         }
     }

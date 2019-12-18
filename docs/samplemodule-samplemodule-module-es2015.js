@@ -11052,15 +11052,15 @@ let DropdownComponent = class DropdownComponent {
         this.selectedItemChange = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["EventEmitter"]();
         // Internal UI Variables
         this.customItems = [];
-        this.isItemsDisplayed = false;
-        this.isErrorOccured = false;
+        this._flag_is_dropdown_content_displayed = false;
+        this._flag_is_error_occured = false;
         this.errormessage = '';
     }
     clickedOutside($event) {
-        this.isItemsDisplayed = false;
+        this._flag_is_dropdown_content_displayed = false;
     }
     ngOnChanges() {
-        this.isErrorOccured = false;
+        this._flag_is_error_occured = false;
         if ((this.bindValue && !this.bindLabel) || (!this.bindValue && this.bindLabel)) {
             this.bindLabel = this.bindValue;
         }
@@ -11080,7 +11080,7 @@ let DropdownComponent = class DropdownComponent {
     }
     toggleItemDisplay() {
         event.stopPropagation();
-        this.isItemsDisplayed = !this.isItemsDisplayed;
+        this._flag_is_dropdown_content_displayed = !this._flag_is_dropdown_content_displayed;
         if (this.items === undefined) {
             this.toggleErrorMessage('Loading...');
         }
@@ -11131,11 +11131,11 @@ let DropdownComponent = class DropdownComponent {
     }
     toggleErrorMessage(message) {
         if (message) {
-            this.isErrorOccured = true;
+            this._flag_is_error_occured = true;
             this.errormessage = message;
         }
         else {
-            this.isErrorOccured = false;
+            this._flag_is_error_occured = false;
             this.errormessage = '';
         }
     }

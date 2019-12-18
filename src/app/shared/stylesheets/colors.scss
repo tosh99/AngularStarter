@@ -1,40 +1,39 @@
 /* ------------  Brand Colors  ---------------- */
-$ac_clr: #0278EC;
-$pr_clr: #0267C9;
-$sc_clr: #EDF3FC;
+$accent_color: #0278EC;
+$primary_color: #0267C9;
+$secondary_color: #EDF3FC;
 
 /* -----------  Border Colors  ---------------- */
-$border-color: rgb(208, 222, 230);
+$border_color: rgb(208, 222, 230);
+$border_color_input: #000;
 
 
 /* -----------  Button Colors  ---------------- */
-$btn-bg-color: #ff9e00;
-$btn-font-color: #FFF;
-$btn-bg-image: #ff9e00;
-$btn-no-outline-font-color: #000;
+$button_background: #ff9e00;
+$button_font_color: #FFF;
+$button_no_outline_font_color: #000;
 
 
 /* -----------  Font Colors  ------------------- */
-$font_clr_primary: rgb(94, 90, 95);
-$font_clr_secondary: rgba(9, 20, 37, 0.59);
-$font_clr_tertiary: rgba(0, 0, 0, 0.13);
-$warning_font_clr: rgb(185, 43, 52);
-$tooltipfont: rgb(185, 43, 52);
+$font_color_primary: rgb(94, 90, 95);
+$font_color_secondary: rgba(9, 20, 37, 0.59);
+$font_color_tertiary: rgba(0, 0, 0, 0.13);
+$font_color_warning: rgb(185, 43, 52);
+$font_color_tooltip: rgb(185, 43, 52);
 
 
 /* -----------  Input Group Colors  ------------ */
-$input-border: #000;
 
 //Input Group Params
-$ig-item-font-color: #53565A;
-$ig-item-placeholder-color: #98A4AE;
-$ig-item-input-border: #CFDDE6;
-$ig-input-required: #ED8B00;
+$ig_item_font_color: #53565A;
+$ig_item_placeholder_color: #98A4AE;
+$ig_item_input_border_color: #CFDDE6;
+$ig_input_required_color: #ED8B00;
 
 
 /* -----------  Page Layout Colors  ------------ */
-$pagecontainer-background: #F2F2F2;
+$page_bg_color: #F2F2F2;
 
 
 /* -----------  Table Colors  ------------------ */
-$table-header-bg: #f2f2f2;
+$table_header_bg_color: #f2f2f2;

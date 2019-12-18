@@ -1,6 +1,6 @@
 <div class="custom-dropdown" [ngClass]="{'material':theme === 'material','default':theme === 'default'}" [ngStyle]="style">
     <!--Button Container-->
-    <div #parentdiv class="dropdown-button" [ngClass]="{'dropdown-open':isItemsDisplayed}" id="app-dropdown-id" (click)="toggleItemDisplay()">
+    <div #parentdiv class="dropdown-button" [ngClass]="{'dropdown-open':_flag_is_dropdown_content_displayed}" id="app-dropdown-id" (click)="toggleItemDisplay()">
 
         <!-- Single Select Container-->
         <div class="singleselect-container" *ngIf="!isMultiSelect">
@@ -12,7 +12,7 @@
             <div class="deletecontainer" (click)="clearSelected()">
                 <img alt="" *ngIf="style['deleteiconsrc'] !== undefined" [src]="style['deleteiconsrc']" width="20" height="20">
                 <i *ngIf="isClearable && style['deleteiconsrc'] === undefined" class="fas fa-times"></i>
-                <i class="fas" [ngClass]="{'fa-angle-down':!isItemsDisplayed, 'fa-angle-up':isItemsDisplayed}"></i>
+                <i class="fas" [ngClass]="{'fa-angle-down':!_flag_is_dropdown_content_displayed, 'fa-angle-up':_flag_is_dropdown_content_displayed}"></i>
             </div>
         </div>
 
@@ -54,10 +54,10 @@
     </div>
 
     <!--Content Container-->
-    <div class="dropdown-content" (click)="stopPropagation()" *ngIf="isItemsDisplayed" [style.marginTop.px]="parentdiv.offsetHeight">
+    <div class="dropdown-content" (click)="stopPropagation()" *ngIf="_flag_is_dropdown_content_displayed" [style.marginTop.px]="parentdiv.offsetHeight">
 
         <!--List of Items (no error)-->
-        <div class="dropdown-items" *ngIf="!isErrorOccured">
+        <div class="dropdown-items" *ngIf="!_flag_is_error_occured">
             <div class="dropdown-search-box" *ngIf="isSearchable">
                 <input placeholder="Search..." [(ngModel)]="searchText" (keyup.enter)="addMultiItems()">
             </div>
@@ -76,7 +76,7 @@
         </div>
 
         <!-- Error Message-->
-        <div class="dropdown-no-item-error" *ngIf="isErrorOccured">
+        <div class="dropdown-no-item-error" *ngIf="_flag_is_error_occured">
             <header>{{errormessage}}</header>
         </div>
     </div>

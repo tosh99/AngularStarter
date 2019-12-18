@@ -6,6 +6,7 @@ import {BehaviorSubject} from 'rxjs';
 export class GlobalStateVariables {
 
     public static _globalState = new BehaviorSubject(null);
+    public is_encryption_enabled = false;
 
     constructor() {
         let gbstate = localStorage.getItem('globalState');
@@ -29,6 +30,7 @@ export class GlobalStateVariables {
 
         // Check Global State Definition
         let temp = GlobalStateVariables._globalState.getValue();
+
         if (temp === null || temp === undefined) {
             temp = {};
         } else {
@@ -39,7 +41,12 @@ export class GlobalStateVariables {
                     temp = {};
                 }
             } else {
-                temp = {};
+                try {
+                    temp = JSON.stringify(temp);
+                    temp = JSON.parse(temp);
+                } catch (e) {
+                    temp = {};
+                }
             }
         }
 
@@ -52,6 +59,7 @@ export class GlobalStateVariables {
         }
 
         temp[key] = value;
+
         localStorage.setItem('globalState', JSON.stringify(temp));
         GlobalStateVariables._globalState.next(temp);
     }
@@ -62,15 +70,24 @@ export class GlobalStateVariables {
             temp = {};
         } else {
             if (typeof (temp) === 'string') {
-                temp = JSON.parse(temp);
+                try {
+                    temp = JSON.parse(temp);
+                } catch (e) {
+                    temp = {};
+                }
+            } else {
+                try {
+                    temp = JSON.stringify(temp);
+                    temp = JSON.parse(temp);
+                } catch (e) {
+                    temp = {};
+                }
             }
         }
         delete temp[key];
 
         GlobalStateVariables._globalState.next(temp);
         localStorage.setItem('globalState', JSON.stringify(temp));
-
-
     }
 
     public clearGlobalState() {

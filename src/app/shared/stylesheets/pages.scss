@@ -8,13 +8,13 @@ div:focus, header:focus, button:focus {
 
 .custom-page-container {
     padding: 25px;
-    background: $pagecontainer-background;
+    background: $page_bg_color;
     min-height: calc(100vh - 70px - 50px);
 
     .custom-container {
         margin-top: 25px;
         background: white;
-        padding: $pagecontainer-padding;
+        padding: $page_padding;
 
         > header {
             display: flex;
